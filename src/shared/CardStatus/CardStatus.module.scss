@@ -1,0 +1,26 @@
+@use '../../style/variables/variables.scss' as *;
+
+.status {
+    color: $white-text;
+    font-size: 12px;
+    line-height: 14.52px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    padding: 6px 0;
+}
+
+.live {
+    background-color: $green;
+}
+
+.finished {
+    background-color: $red;
+}
+
+.preparing {
+    max-width: 112px;
+    background-color: $orange;
+}

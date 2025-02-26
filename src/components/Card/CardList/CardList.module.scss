@@ -1,0 +1,64 @@
+@use '../../../style/variables/variables.scss' as *;
+
+// открытый список
+
+.open_card {
+    margin-top: 32px;
+    display: flex;
+    gap: 32px;
+
+    &_item {
+        width: 50%;
+        flex-direction: column;
+        gap: 8px;
+
+        .users {
+            display: flex;
+            gap: 8px;
+
+            .user {
+                width: 100%;
+                max-width: 286px;
+                padding: 12px 24px;
+                background-color: $bg-user;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+
+                &_name {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    .kill {
+                        opacity: 0.4;
+                    }
+                }
+
+            }
+
+        }
+
+        .info {
+            background-color: $bg-user;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+
+            &_item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+                max-width: 265px;
+            }
+
+        }
+
+    }
+
+
+
+}

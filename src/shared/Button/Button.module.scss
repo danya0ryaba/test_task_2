@@ -1,0 +1,29 @@
+@use '../../style/variables/variables.scss' as *;
+
+.button {
+    display: flex;
+    gap: 10px;
+    color: $white-text;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 40px;
+    background-color: $red;
+    border-radius: 4px;
+    transition: 0.4s ease;
+
+    &:hover {
+        svg {
+            transform: rotate(360deg);
+        }
+    }
+
+
+}
+
+.loader {
+    background-color: $dark-red;
+}
+
+.button[disabled] {
+    background-color: $disabled-red;
+}

@@ -1,0 +1,48 @@
+@use '../../style/variables/variables.scss' as *;
+
+.card {
+    max-width: 1836px;
+    padding: 16px;
+    background-color: $bg-card;
+    color: $white-text;
+}
+
+.main_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .command {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        &__two {
+            align-items: center;
+            gap: 14px;
+            display: flex;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+    }
+
+    .command__two {
+        flex-direction: row-reverse;
+    }
+
+    .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+
+        span {
+            font-size: 20px;
+        }
+
+    }
+
+}
