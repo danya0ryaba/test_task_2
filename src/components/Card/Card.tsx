@@ -11,19 +11,15 @@ export const Card: React.FC<Match> = (props) => {
 
     return (
         <article className={style.card}>
-
             <div className={style.main_card}>
-
                 <div className={style.command}>
                     <img src={'../../../public/card.png'} alt="command avatar" />
                     <h4 className={style.name}>{props.awayTeam.name}</h4>
                 </div>
-
                 <div className={style.score}>
                     <span>{props.awayScore} : {props.homeScore}</span>
                     <CardStatus theme={Status[props.status]} />
                 </div>
-
                 <div className={style.command}>
                     <div className={style.command__two}>
                         <img src={'../../../public/card.png'} alt="command avatar" />
@@ -35,11 +31,8 @@ export const Card: React.FC<Match> = (props) => {
                         </svg>
                     </div>
                 </div>
-
             </div>
-
             {openCard && <CardList {...props} />}
-
         </article>
     )
 }

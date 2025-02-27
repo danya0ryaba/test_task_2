@@ -1,5 +1,6 @@
-import { fetchMathes } from '../../services/getCards'
 import { Button } from '../../shared/Button/Button'
+import { getCards } from '../../store/cardsSlice/cardsSlice'
+import { useAppDispatch } from '../../store/store'
 import style from './Header.module.scss'
 
 type HeaderType = {
@@ -9,14 +10,17 @@ type HeaderType = {
 export const Header: React.FC<HeaderType> = ({
     error = null
 }) => {
+
+    const dispatch = useAppDispatch()
+
+    const updateCards = () => dispatch(getCards('fronttemp'))
+
     return (
         <header className={style.header}>
             <nav>
                 <ul className={style.navigate_list}>
                     <li className={style.navigate_list_item}>
-                        <h1>
-                            Match Tracker
-                        </h1>
+                        <h1>Match Tracker</h1>
                     </li>
                     <li className={style.navigate_list_item}>
                         {error && (
@@ -27,7 +31,7 @@ export const Header: React.FC<HeaderType> = ({
                                 {error ? error : null}
                             </span>
                         )}
-                        <Button onClick={() => { fetchMathes('fronttemp') }}>Обновить</Button>
+                        <Button onClick={updateCards}>Обновить</Button>
                     </li>
                 </ul>
             </nav>

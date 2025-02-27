@@ -5,7 +5,6 @@ import style from './CardList.module.scss'
 export const CardList: React.FC<Match> = ({
     homeTeam,
     awayTeam,
-    ...otherProps
 }) => {
     return (
         <div className={style.open_card}>
@@ -28,7 +27,7 @@ export const CardList: React.FC<Match> = ({
                 <ul className={style.info}>
                     <li className={style.info_item}>
                         <span className={style.info_item_key}>Points: </span>
-                        <span className={style.info_item_value}>+{homeTeam.points}</span>
+                        <span className={style.info_item_value}>+ {homeTeam.points}</span>
                     </li>
                     <li className={style.info_item}>
                         <span className={style.info_item_key}>Место: </span>

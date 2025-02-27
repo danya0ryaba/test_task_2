@@ -1,6 +1,7 @@
 
 
 export type DateMatches = {
+    // json(): unknown
     ok: boolean,
     data: {
         matches: Match[]
