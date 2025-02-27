@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import style from './Card.module.scss'
 import { CardStatus, Status } from '../../shared/CardStatus/CardStatus'
 import { CardList } from './CardList/CardList';
 import { Match } from '../../types/type';
+
+import cardImage from '../../assets/card.png';
+
+import style from './Card.module.scss'
 
 export const Card: React.FC<Match> = (props) => {
 
@@ -13,7 +16,7 @@ export const Card: React.FC<Match> = (props) => {
         <article className={style.card}>
             <div className={style.main_card}>
                 <div className={style.command}>
-                    <img src={'../../../public/card.png'} alt="command avatar" />
+                    <img src={cardImage} alt="command avatar" />
                     <h4 className={style.name}>{props.awayTeam.name}</h4>
                 </div>
                 <div className={style.score}>
@@ -22,7 +25,7 @@ export const Card: React.FC<Match> = (props) => {
                 </div>
                 <div className={style.command}>
                     <div className={style.command__two}>
-                        <img src={'../../../public/card.png'} alt="command avatar" />
+                        <img src={cardImage} alt="command avatar" />
                         <h4 className={style.name}>{props.homeTeam.name}</h4>
                     </div>
                     <div className={style.arrow} style={{ transform: classArrow }} onClick={() => setOpenCard(prev => !prev)}>

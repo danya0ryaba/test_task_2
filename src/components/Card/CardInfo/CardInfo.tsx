@@ -1,5 +1,7 @@
 import { TeamType } from '../../../types/type'
 
+import userImage from '../../../assets/user.png'
+
 import style from './CardInfo.module.scss'
 
 export const CardInfo: React.FC<TeamType> = ({
@@ -15,7 +17,7 @@ export const CardInfo: React.FC<TeamType> = ({
                 {players.map(item => (
                     <li className={style.user} key={item.username}>
                         <span className={style.user_name}>
-                            <img src="../../../public/user.png" alt="avatar" />
+                            <img src={userImage} alt="avatar" />
                             <h6 className={style.name}>{item.username}</h6>
                         </span>
                         <span className={style.user_name}>
