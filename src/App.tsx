@@ -2,38 +2,32 @@ import { useEffect, useState } from 'react'
 import { Card } from './components/Card/Card'
 import { CardLoader } from './components/Card/CardLoader/CardLoader'
 import { Header } from './components/Header/Header'
+import { Match } from './types/type'
+import { fetchMathes } from './services/getCards'
 
 import './style/global.scss'
-import { Date, Match } from './types/type'
-
 
 function App() {
-  const apiUrl = import.meta.env.BASE_URL;
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [matches, setMatches] = useState<Match[]>([])
   const [error, setError] = useState<string | null>(null)
 
-  async function fetchMathes(url: string): Promise<Date> {
-    try {
-      setLoading(true)
-      const response = await fetch(apiUrl + url);
+  useEffect(() => {
+    async function asyncForGetMatches() {
+      const response = await fetchMathes('fronttemp');
       if (!response.ok) {
+        setLoading(false)
+        setError(' Ошибка: не удалось загрузить информацию')
         throw new Error('Network response was not ok');
       }
-      const data: Date = await response.json();
       setLoading(false)
-      return data;
-    } catch (error) {
-      console.error('Fetch error:', error);
-      setLoading(false)
-      setError((error as Error).message)
-      throw error;
+      setMatches(response.data.matches)
     }
-  }
-
-  useEffect(() => {
-    fetchMathes('/fronttemp').then(data => setMatches(data.data.matches))
+    asyncForGetMatches()
+    return () => {
+      asyncForGetMatches()
+    }
   }, [])
 
   return (

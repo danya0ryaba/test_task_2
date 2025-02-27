@@ -6,9 +6,9 @@ type CardStatusType = {
 }
 
 export enum Status {
-    live = 'live',
-    finished = 'Finished',
-    preparing = 'preparing'
+    Finished = 'Live',
+    Scheduled = 'Finished',
+    Ongoing = 'preparing'
 }
 
 export const CardStatus: React.FC<CardStatusType> = ({
@@ -17,7 +17,7 @@ export const CardStatus: React.FC<CardStatusType> = ({
 }) => {
     return (
         <div className={`${style.status} ${className} ${style[theme]}`}>
-            {theme === Status.preparing ? 'Match preparing' : theme}
+            {theme === Status.Ongoing ? 'Match preparing' : theme}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 
 
-export type Date = {
+export type DateMatches = {
     ok: boolean,
     data: {
         matches: Match[]

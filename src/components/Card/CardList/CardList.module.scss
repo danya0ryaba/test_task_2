@@ -1,7 +1,6 @@
 @use '../../../style/variables/variables.scss' as *;
 
 // открытый список
-
 .open_card {
     margin-top: 32px;
     display: flex;
@@ -14,7 +13,8 @@
 
         .users {
             display: flex;
-            gap: 8px;
+            justify-content: space-between;
+            margin-bottom: 8px;
 
             .user {
                 width: 100%;
@@ -26,10 +26,23 @@
                 justify-content: space-between;
                 gap: 8px;
 
+                span {
+                    background-color: transparent;
+                }
+
                 &_name {
+                    background-color: transparent;
                     display: flex;
                     align-items: center;
                     gap: 8px;
+
+                    img {
+                        background-color: transparent;
+                    }
+
+                    .name {
+                        background-color: transparent;
+                    }
 
                     .kill {
                         opacity: 0.4;
@@ -47,12 +60,31 @@
             justify-content: space-between;
 
             &_item {
+                background-color: transparent; //$bg-user;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
                 width: 100%;
                 max-width: 265px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    background-color: #141A21;
+                    height: 16px;
+                    width: 1px;
+                    position: absolute;
+                    left: 104.5%;
+                    bottom: 0;
+                }
+
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+
             }
 
         }
