@@ -7,7 +7,7 @@ type CardStatusType = {
 
 export enum Status {
     live = 'live',
-    finished = 'finished',
+    finished = 'Finished',
     preparing = 'preparing'
 }
 

@@ -1,0 +1,37 @@
+@use '../../style/variables/variables.scss' as *;
+
+.header {
+    padding: 42px 0 20px;
+}
+
+
+.navigate_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white-text;
+
+    &_item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        h1 {
+            cursor: pointer;
+            font-family: 'Tactic Sans';
+            font-weight: 400;
+            font-style: italic;
+            font-size: 32px;
+            line-height: 32px;
+        }
+
+        .error {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 17px 24px;
+            background-color: $bg-input;
+        }
+    }
+
+}
