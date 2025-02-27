@@ -9,7 +9,7 @@ const store = setupStore()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename='/test_task_2/'    >
+    <BrowserRouter basename='/test_task_2/'>
       <Provider store={store}>
         <App />
       </Provider>
