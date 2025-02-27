@@ -1,18 +1,14 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../../shared/Button/Button'
 import { getCards } from '../../store/cardsSlice/cardsSlice'
-import { useAppDispatch } from '../../store/store'
+import { useAppDispatch, useAppSelector } from '../../store/store'
+
 import style from './Header.module.scss'
 
-type HeaderType = {
-    error?: string | null
-}
-
-export const Header: React.FC<HeaderType> = ({
-    error = null
-}) => {
+export const Header: React.FC = () => {
 
     const dispatch = useAppDispatch()
-
+    const { error } = useAppSelector(state => state.cardsSlice)
     const updateCards = () => dispatch(getCards('fronttemp'))
 
     return (
@@ -20,7 +16,9 @@ export const Header: React.FC<HeaderType> = ({
             <nav>
                 <ul className={style.navigate_list}>
                     <li className={style.navigate_list_item}>
-                        <h1>Match Tracker</h1>
+                        <Link to={'/'} className={style.navigate_list_item_link}>
+                            <h1>Match Tracker</h1>
+                        </Link>
                     </li>
                     <li className={style.navigate_list_item}>
                         {error && (
